@@ -1,0 +1,234 @@
+@font-face {
+    font-family: 'HankenGrotesk';
+    font-weight: 100 900;
+    src: url('assets/fonts/HankenGrotesk-VariableFont_wght.ttf')
+         format('truetype'); 
+}
+
+.attribution {
+    display: none;
+}
+
+* {
+    margin: 0;
+    font: inherit;
+}
+
+svg {
+    margin-left: 10px;
+}
+
+
+body {
+    font-family: HankenGrotesk;
+    font-size: 1rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh; 
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin: 2rem;
+}
+
+
+
+.container {
+    display: grid;
+    flex-shrink: 1;
+    grid-template-rows: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'result summary';
+    width: 37.5%;
+    height: 26rem;
+    
+    background-image: white;
+    border-radius: 2rem 2rem 2rem 2rem;
+    box-shadow: 1rem 1rem 1.5rem rgba(0, 0, 0, 0.293);
+}
+
+.result {
+    grid-area: result;
+    background-image: linear-gradient(to top,#312be5,#6645f5);
+    border-radius: 2rem;
+    text-align: center;
+
+    height:inherit;
+
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    'result-title'
+    'result-score'
+    'result-name'
+    'result-desc';
+    display: grid;
+
+    color: rgba(255, 255, 255, 0.773);
+}
+
+.result .title {
+    grid-area: result-title;
+    color: rgba(255, 255, 255, 0.841);
+
+}
+.result .score {
+    grid-area: result-score;
+    width: 10rem;
+    height: 10rem;
+    justify-self: center;
+    align-self: center;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom,#481fcb,#4734f0);
+    
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    'actual'
+    'of';
+
+    justify-content: center;
+    align-items: center;
+}
+.result .score span {
+    grid-area: actual;
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+
+}
+.result .score .of {
+    grid-area: of;
+}
+.result .level {
+    grid-area: result-name;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 1rem;
+    color: white;
+}
+.result .desc {
+    margin: 0rem 2rem 1.75rem 2rem;
+}
+
+
+.cards{
+    grid-area: summary;
+    height:inherit;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 60%;
+}
+
+.cards div {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 1fr 2fr 1fr 2fr;
+    grid-template-areas: 
+    'svg title empty score';
+}
+
+.card svg {
+    grid-area: svg;
+}
+.card h3 {
+    grid-area: title;
+}
+.card-1 h3 {
+    grid-area: title;
+    color: #df6a68;
+}
+.card-1 {
+    background-color: #df6a683a ;
+    height: 15%;
+    border-radius: 2rem;
+}
+.card-2 h3 {
+    grid-area: title;
+    color: #f9bc3f;
+}
+.card-2 {
+    background-color: #f9bb3f3a ;
+    height: 15%;
+    border-radius: 2rem;
+}
+.card-3 h3 {
+    grid-area: title;
+    color: #4baf95;
+}
+.card-3 {
+    background-color: #4baf9438 ;
+    height: 15%;
+    border-radius: 2rem;
+}
+.card-4 h3 {
+    grid-area: title;
+    color: #343ca6;
+}
+.card-4 {
+    background-color: #343ca63c ;
+    height: 15%;
+    border-radius: 2rem;
+}
+.card p {
+    grid-area: score;
+}
+
+.cards >* {
+    margin-left:1.5rem;
+    margin-right: 1.5rem;
+}
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.button {
+    text-align: center;
+}
+button {
+    cursor: pointer;
+    border-radius: 100vh;
+    color: white;
+    background: #303b59;
+    width: 14.5rem;
+    height: 3rem;
+    font-weight: 200;
+}
+button:hover{
+    background-image: linear-gradient(to bottom,#6645f5,#312be5);
+}
+
+@media (max-width: 1200px) {
+
+    .container {
+        grid-template-rows: 1fr 2fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'result'
+        'summary';
+        width: auto;
+        height: auto;
+        border-radius: 0rem 0rem 0rem 0rem;
+    }
+    .result {
+        border-radius: 0rem 0rem 2rem 2rem;
+    }
+    .summary {
+        border-radius: 0rem 0rem 0rem 0rem;
+    }
+}
+
+
+
+
+
