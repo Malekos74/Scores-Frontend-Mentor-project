@@ -192,6 +192,10 @@ h1 {
     text-align: center;
 }
 
+.ind-score {
+    font-weight: bold;
+}
+
 .button {
     text-align: center;
 }
